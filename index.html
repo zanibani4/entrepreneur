@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aeterna Lux — Veleprodaja žar</title>
+  <meta name="description" content="Aeterna Lux — veleprodaja žar za pogrebna podjetja.">
+  <link rel="icon" type="image/png" href="slike/favicon.png">
+  <link rel="apple-touch-icon" href="slike/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="slog.css">
+</head>
+<body>
+
+  <!-- PRIJAVA -->
+  <div id="prijava" class="prijava">
+    <form id="prijava-obrazec" class="prijava-okno" autocomplete="off">
+      <img src="slike/logo.png" alt="Aeterna Lux" class="prijava-logo">
+      <p class="prijava-napis">Zaprta stran za pogrebna podjetja</p>
+      <label for="geslo" class="skrito">Geslo</label>
+      <input id="geslo" type="password" placeholder="Vnesite geslo" required>
+      <button type="submit" class="gumb">Vstop</button>
+      <p id="prijava-napaka" class="prijava-napaka" hidden>Napačno geslo.</p>
+      <p class="prijava-pomoc">Nimate gesla? Pokličite <a id="prijava-tel" href="#"></a></p>
+    </form>
+  </div>
+
+  <!-- VSEBINA -->
+  <div id="stran" hidden>
+    <header class="glava">
+      <div class="okvir glava-vrstica">
+        <a href="#vrh" class="znamka">AETERNA&nbsp;LUX</a>
+        <nav class="meni" id="meni">
+          <a href="#katalog">Katalog</a>
+          <a href="#cenik">Cenik</a>
+          <a href="#narocanje">Naročanje</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <a id="glava-tel" class="glava-tel" href="#"></a>
+      </div>
+    </header>
+
+    <main id="vrh">
+      <section class="uvod">
+        <div class="okvir uvod-vsebina">
+          <img src="slike/logo.png" alt="Aeterna Lux" class="uvod-logo">
+          <div>
+            <p class="nadnaslov">Veleprodaja žar za pogrebna podjetja</p>
+            <h1>Dostojanstvo v vsaki podrobnosti</h1>
+            <p id="uvod-besedilo" class="uvod-besedilo"></p>
+            <div class="gumbi">
+              <a href="#katalog" class="gumb">Oglejte si katalog</a>
+              <a href="#cenik" class="gumb gumb-obroba">Cenik</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="okvir prednosti" id="prednosti"></section>
+
+      <section id="novosti-sekcija" class="sekcija" hidden>
+        <div class="okvir">
+          <h2>Nove linije</h2>
+          <div id="novosti" class="mreza"></div>
+        </div>
+      </section>
+
+      <section id="katalog" class="sekcija">
+        <div class="okvir">
+          <div class="sekcija-glava">
+            <h2>Katalog žar</h2>
+            <p class="podnaslov">Vsaka žara ima svojo šifro. Zapišite si šifro žare, ki vam je všeč, in mi jo povejte po telefonu.</p>
+          </div>
+          <div class="filtri">
+            <div id="filtri-kategorije" class="cipi" role="group" aria-label="Kategorija"></div>
+            <input id="iskanje" type="search" placeholder="Išči po šifri, npr. KE-02" aria-label="Išči po šifri">
+          </div>
+          <div id="mreza" class="mreza"></div>
+          <p id="ni-zadetkov" class="ni-zadetkov" hidden>Ni žar, ki bi ustrezale iskanju.</p>
+        </div>
+      </section>
+
+      <section id="cenik" class="sekcija sekcija-temna">
+        <div class="okvir">
+          <h2>Cenik</h2>
+          <p class="podnaslov">Cene so na kos, brez DDV.</p>
+          <div class="cenik-ovoj">
+            <table class="cenik">
+              <thead><tr><th>Material</th><th>Šifra</th><th>Mere / opomba</th><th class="desno">Cena</th></tr></thead>
+              <tbody id="cenik-vrstice"></tbody>
+            </table>
+          </div>
+          <div class="cenik-dodatno">
+            <div><h3>Količinski popusti</h3><ul id="popusti"></ul></div>
+            <div><h3>Pogoji</h3><ul id="pogoji"></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="narocanje" class="sekcija">
+        <div class="okvir">
+          <h2>Kako naročiti</h2>
+          <ol class="koraki">
+            <li><span>01</span><h3>Izberite žaro</h3><p>V katalogu si zapišite šifro (npr. <strong>KE-02</strong>) ali jo dodajte v svoj izbor z gumbom ☆.</p></li>
+            <li><span>02</span><h3>Pokličite me</h3><p>Povejte šifre in količine. Lahko pa se oglasim pri vas in pripeljem vzorce.</p></li>
+            <li><span>03</span><h3>Potrditev in dobava</h3><p>Razpoložljivost potrdim v enem delovnem dnevu, dobava v 2–7 dneh.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="kontakt" class="sekcija sekcija-temna">
+        <div class="okvir kontakt">
+          <div>
+            <h2>Kontakt</h2>
+            <p class="kontakt-ime" id="k-ime"></p>
+            <p><a id="k-tel" class="kontakt-velik" href="#"></a></p>
+            <p><a id="k-email" href="#"></a></p>
+            <p id="k-kraj" class="tiho"></p>
+          </div>
+          <img src="slike/logo.png" alt="" class="kontakt-logo">
+        </div>
+      </section>
+    </main>
+
+    <footer class="noga">
+      <div class="okvir noga-vrstica">
+        <p id="noga-podjetje"></p>
+        <button id="odjava" class="povezava">Odjava</button>
+      </div>
+    </footer>
+
+    <!-- MOJ IZBOR -->
+    <div id="izbor" class="izbor" hidden>
+      <div class="izbor-vsebina">
+        <span class="izbor-naslov">Moj izbor:</span>
+        <span id="izbor-kode" class="izbor-kode"></span>
+      </div>
+      <div class="izbor-gumbi">
+        <a id="izbor-klic" href="#" class="gumb gumb-majhen">Pokliči</a>
+        <button id="izbor-pocisti" class="povezava">Počisti</button>
+      </div>
+    </div>
+
+    <!-- POVEČAVA ŽARE -->
+    <dialog id="povecava" class="povecava">
+      <button class="povecava-zapri" aria-label="Zapri" data-zapri>&times;</button>
+      <div class="povecava-vsebina">
+        <div class="povecava-slika"><img id="pv-slika" alt=""></div>
+        <div class="povecava-podatki">
+          <p class="nadnaslov" id="pv-kategorija"></p>
+          <h3 id="pv-koda" class="pv-koda"></h3>
+          <p id="pv-opis"></p>
+          <p id="pv-cena" class="pv-cena"></p>
+          <p id="pv-status"></p>
+          <button id="pv-izberi" class="gumb"></button>
+          <p class="tiho">Za naročilo pokličite <a id="pv-tel" href="#"></a> in povejte šifro.</p>
+        </div>
+      </div>
+    </dialog>
+  </div>
+
+  <script src="podatki.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
