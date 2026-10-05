@@ -40,3 +40,11 @@ Geslo prepreči, da bi stran po naključju videl kdorkoli, in Google je ne indek
 Ni pa to bančna zaščita: spretnejši uporabnik bi vsebino lahko prebral iz kode strani.
 Za cenik in katalog je to običajno dovolj. Če boš želel močnejšo zaščito (npr. vsaka
 stranka svoj email za prijavo), se da to urediti pri objavi strani (npr. Cloudflare Access).
+
+## Pošiljanje strani po mailu
+Datoteka **`Aeterna-Lux-katalog.html`** je cela stran v eni datoteki (z vsemi slikami).
+Pošlješ jo strankam kot prilogo, one jo odprejo v brskalniku. Gesla ni, ker jo dobijo osebno.
+
+Po vsaki spremembi v `podatki.js` je treba datoteko izdelati znova
+(`python3 izdelaj-datoteko.py`) — ali pa samo prosi Claude, naj to naredi.
+Strankam nato pošlji novo verzijo.

@@ -14,6 +14,8 @@
   const telLink = "tel:+386" + P.kontakt.telefon.replace(/\s/g, "").replace(/^0/, "");
   const evri = (n) => n.toLocaleString("sl-SI") + " €";
   const kategorija = (koda) => P.kategorije.find((k) => k.koda === koda) || { naziv: koda, cena: 0 };
+  // V datoteki za email so slike vgrajene (window.SLIKE), drugače se berejo iz mape slike/zare/.
+  const slikaZare = (ime) => (window.SLIKE && window.SLIKE[ime]) || "slike/zare/" + ime;
   const cenaZare = (z) => (typeof z.cena === "number" ? z.cena : kategorija(z.kategorija).cena);
 
   // ---------- PRIJAVA ----------
@@ -81,7 +83,7 @@
     el.className = "kartica";
     el.innerHTML = `
       <button class="kartica-slika" type="button" aria-label="Povečaj ${z.koda}">
-        <img src="slike/zare/${z.slika}" alt="${k.naziv} ${z.koda}" loading="lazy">
+        <img src="${slikaZare(z.slika)}" alt="${k.naziv} ${z.koda}" loading="lazy">
         ${z.novo ? '<span class="znacka">Novo</span>' : ""}
       </button>
       <div class="kartica-telo">
@@ -132,7 +134,7 @@
   // ---------- POVEČAVA ----------
   function odpriPovecavo(z) {
     const k = kategorija(z.kategorija);
-    $("pv-slika").src = "slike/zare/" + z.slika;
+    $("pv-slika").src = slikaZare(z.slika);
     $("pv-slika").alt = k.naziv + " " + z.koda;
     $("pv-kategorija").textContent = k.naziv;
     $("pv-koda").textContent = z.koda;
@@ -194,6 +196,8 @@
     $("noga-podjetje").textContent = `${K.podjetje} · ${K.naslov}`;
   }
 
-  if (jePrijavljen()) odkleni();
+  // Datoteka za email se odpre brez gesla, saj jo stranka dobi osebno.
+  if (window.BREZ_GESLA) $("odjava").hidden = true;
+  if (window.BREZ_GESLA || jePrijavljen()) odkleni();
   else $("geslo").focus();
 })();
